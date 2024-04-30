@@ -8,7 +8,6 @@ body{
     line-height: 1.4; /*1.4배의 줄높이*/
     font-family: 'Nanum Gothic', sans-serif;
     /*이렇게 하면 단일 선언이 된다.*/
-    height: 3000px;
       
 }
 img{
@@ -936,4 +935,87 @@ cursor: pointer;
     background-color: #fff;
     color: #333;
 
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: #272727;
+    border-top: 1px solid #333;
+}
+footer .inner{
+    padding: 40px 0 60px 0;
+    
+}
+footer .menu{
+    display: flex;
+    justify-content: center;
+}
+footer .menu li{
+    position: relative;
+}
+footer .menu li::before{
+    content: "";
+    width: 3px;
+    height: 3px; /*가로 세로 값을 사용하려면 display가 block이어야 함*/
+    background-color: #555;
+    position: absolute; /*position absolut랑 position fixed를 사용하면 display 값이 자동으로 block으로 바뀜*/
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    margin: auto;
+}
+footer .menu li:last-child::before{
+    display: none;
+}
+
+footer .menu li a{
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 15px; /*inline요소는 margin과 padding의 위 아래 값을 정상적으로 사용 불가*/
+    display: block;
+}
+footer .menu li a.green{
+    color: #669900;
+}
+
+footer .btn-group{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+footer .btn-group .btn{
+    font-size: 12px;
+    margin-right: 10px;
+}
+footer .btn-group .btn:last-child{
+    margin-right: 0;
+}
+
+footer .info{
+    margin-top: 30px;
+    text-align: center;
+}
+footer .info span{
+    margin-right: 20px;
+    color: #999;
+    font-size: 12px;
+}
+footer info.span:last-child{
+    margin-right: 0;
+}
+footer .copyright{
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+
+}
+
+footer .logo{
+    margin: 30px auto 0;
+    /*이미지 요소는 가로 넓이 속성 없어도 가능하다
+    display: block + margin: 0 auto 인경우 ..
+    */
 }

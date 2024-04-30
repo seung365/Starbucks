@@ -146,3 +146,6 @@ function random(min, max) {
     .setClassToggle(spyEl,'show') //show라는 클래스를 추가해준다.
     .addTo(new ScrollMagic.Controller()); 
  }); 
+
+ const thisYear = document.querySelector('.this-year');
+ thisYear.textContent = new Date().getFullYear(); //올해의 연도
