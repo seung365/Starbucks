@@ -130,6 +130,6 @@ function random(min, max) {
         triggerElement: spyEl, //보여짐 여부를 감시할 요소를 지정.
         triggerHook: .8 //뷰포트 시작 0 가장 끝 1 중간은 0.5가 된다.
     })
-    .setClassToggle(spyEl,'show') 
-    .addTo(new ScrollMagic.Controller()); //class toggle 넣었다 뺐다.
- });
+    .setClassToggle(spyEl,'show') //show라는 클래스를 추가해준다.
+    .addTo(new ScrollMagic.Controller()); 
+ }); 
