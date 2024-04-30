@@ -79,6 +79,19 @@ new Swiper('.notice-line .swiper-container', {
 
  });
 
+ new Swiper('.awards .swiper-container',{
+    // direction:'horisontal' 기본값
+    autoplay:true,
+    loop:true,
+    spaceBetween:30,
+    slidesPerView: 5,
+    navigation:{
+        prevEl:'.awards .swiper-prev',
+        nextEl:'.awards .swiper-next'
+    }
+ });
+
+
  const promotionEl = document.querySelector('.promotion'); //promotion이란 클래스를 가진 요소를 찾아서 할당
  const promotionToggleBtn = document.querySelector('.toggle-promotion');//toggle-promotion 이란 클래스를 가진 요소를 찾아서 할당
  let isHidePromotion = false;
