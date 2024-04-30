@@ -19,6 +19,7 @@ searchInputEl.addEventListener('blur',function() //focus가 해제되면.
 });
 
 const badgeEL = document.querySelector('header .badges');
+const toTopEl= document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function () {
     console.log(window.scrollY);
@@ -29,6 +30,12 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 0,
             display: 'none'
         });
+        //버튼 보이기
+        gsap.to(toTopEl,.2,{
+            x: 0
+        });
+
+
     }
     else
     {
@@ -37,12 +44,24 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 1,
             display: 'block'
         });
+        //버튼 숨기기
+        gsap.to(toTopEl,.2,{
+            x: 100
+        });
     }
 },300));
  //0.3초 단위로 부하를 줘서 한번에 실행되는것을 방지
 //window 객체는 하나의 브라우저 탭, 보고있는 화면자체다
 //화면에서 스크롤 이벤트를 할때 throttle이 많이 사용된다.
 //_.throttle(함수, 시간)
+
+
+toTopEl.addEventListener('click',function(){
+    gsap.to(window,.7,{
+        scrollTo: 0 //scrollToPlugin이 있어야 가능
+    }); //window객체는 우리의 페이지가 출력되고 있는 그 화면 자체이다.
+});
+
 
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
